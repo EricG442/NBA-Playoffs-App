@@ -1,9 +1,12 @@
 const express = require("express");
+const nbaRoutes = require("./routes/nba");
 
 const app = express();
 
+app.use("/nba", nbaRoutes);
+
 app.get("/", (req, res) => {
-  res.send("WORKING");
+  res.send("API WORKING");
 });
 
 app.listen(5000, () => {
