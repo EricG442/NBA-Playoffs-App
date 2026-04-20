@@ -1,6 +1,6 @@
 # 🏀 NBA Playoff Insights Dashboard
 
-A Full-stack web application that tracks NBA Playoff games, player performance, and generates real-time statistical insights .
+A Full-stack web application that tracks NBA Playoff games, player performance, and generates real-time statistical insights.
 
 Built with React, Node.js, and JWT authentication.
 

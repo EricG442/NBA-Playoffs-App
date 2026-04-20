@@ -1,5 +1,6 @@
+require("dotenv").config()
 const express = require("express");
-const nbaRoutes = require("./routes/nba");
+const nbaRoutes = require("./routes/nba");;
 
 const app = express();
 
