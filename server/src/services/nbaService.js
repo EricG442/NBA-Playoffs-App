@@ -16,17 +16,19 @@ function normalizeGame(game) {
 
 async function getGames({ dates, page = 1} = {}) {
     const params = new URLSearchParams();
-    params.append("per_page", 5);
     params.append("page", page);
 
     // default to todays date if none is passed
-    const queryDates = dates && dates.length ? dates : [getDate()];
+    const queryDates = 
+        Array.isArray(dates) && dates.length > 0
+            ? dates
+            : [getDate()];
 
     queryDates.forEach(d => params.append("dates[]", d));
 
     const url = `${BASE_URL}/games?${params.toString()}`;
 
-    const res = await fetch(`${BASE_URL}/games?dates[]=2026-04-20`, {
+    const res = await fetch(url, {
         headers: {
             Authorization: api_key
         }
